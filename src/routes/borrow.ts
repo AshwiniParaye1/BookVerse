@@ -17,7 +17,7 @@ router.post(
     try {
       const { bookId } = req.body;
       const userId = req.user?.id;
-
+      console.log("-----", bookId, userId);
       // Check if book exists and is available
       const book = await Book.findById(bookId);
       if (!book) {
@@ -41,6 +41,7 @@ router.post(
 
       res.status(201).json(borrow);
     } catch (error) {
+      console.log("errr", error);
       res.status(400).json({ error: "Error borrowing book" });
     }
   }
@@ -88,10 +89,12 @@ router.post(
 // Get user's borrowed books
 router.get("/user", auth, async (req: AuthRequest, res) => {
   try {
+    console.log("req.user?.id", req.user?.id);
     const borrows = await Borrow.find({
       user: req.user?.id,
       isReturned: false
     }).populate("book");
+    console.log("borrows", borrows);
     res.json(borrows);
   } catch (error) {
     res.status(500).json({ error: "Error fetching borrowed books" });

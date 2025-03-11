@@ -13,7 +13,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
 router.post("/register", async (req: Request, res: Response): Promise<void> => {
   try {
     const { username, password, role } = req.body;
-
+    console.log(req.body);
     // Check if user already exists
     const existingUser = await User.findOne({ username });
     if (existingUser) {
@@ -31,6 +31,7 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
       .status(201)
       .json({ user: { id: user._id, username: user.username }, token });
   } catch (error) {
+    console.log("error", error);
     res.status(400).json({ error: "Error creating user" });
   }
 });

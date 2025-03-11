@@ -51,10 +51,12 @@ router.post(
   [auth as RequestHandler, checkRole(["admin"]) as RequestHandler],
   async (req: Request, res: Response): Promise<void> => {
     try {
+      console.log(req.body);
       const book = new Book(req.body);
       await book.save();
       res.status(201).json(book);
     } catch (error) {
+      console.log(error);
       res.status(400).json({ error: "Error creating book" });
     }
   }
