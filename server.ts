@@ -1,3 +1,5 @@
+//server/ts
+
 import app from "./src/app";
 
 const startServer = () => {
