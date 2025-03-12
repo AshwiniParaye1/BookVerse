@@ -31,6 +31,29 @@ router.get("/", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
+// Search books by title or author
+router.get("/search", async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { query } = req.query;
+
+    if (!query) {
+      res.status(400).json({ error: "Search query is required" });
+      return;
+    }
+
+    const books = await Book.find({
+      $or: [
+        { title: { $regex: query, $options: "i" } },
+        { author: { $regex: query, $options: "i" } }
+      ]
+    });
+
+    res.json(books);
+  } catch (error) {
+    res.status(500).json({ error: "Error searching books" });
+  }
+});
+
 // Get a specific book
 router.get("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
