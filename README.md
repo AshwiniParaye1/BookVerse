@@ -184,4 +184,4 @@ The API follows standard error-handling practices with appropriate status codes:
 - **404 Not Found** → Resource not found.
 - **500 Internal Server Error** → Unexpected server error.
 
-## Thank you for checking out BookVerse! If you have any questions or feedback, feel free to reach out.
+#### Thank you for checking out BookVerse! If you have any questions or feedback, feel free to reach out.
