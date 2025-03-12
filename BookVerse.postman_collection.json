@@ -249,7 +249,7 @@
         {
           "name": "Return Book",
           "request": {
-            "method": "PUT",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
@@ -257,9 +257,9 @@
               }
             ],
             "url": {
-              "raw": "{{base_url}}/api/borrows/:id/return",
+              "raw": "{{base_url}}/api/borrows/return/:borrowedId",
               "host": ["{{base_url}}"],
-              "path": ["api", "borrows", ":id", "return"],
+              "path": ["api", "borrows", "return", ":borrowedId"],
               "variable": [
                 {
                   "key": "id",
