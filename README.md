@@ -9,6 +9,7 @@ BookVerse API is a RESTful API built with Node.js, Express, and MongoDB for mana
 - User registration and authentication using JWT
 - Role-based access control (Admin and User roles)
 - CRUD operations for books
+- Searching for books based on title or author
 - Borrowing and returning books
 - User profile management
 - Pagination for book listings
@@ -106,13 +107,14 @@ Some endpoints are restricted to users with the "admin" role. These endpoints ar
 
 ### Book Routes (`/api/book`)
 
-| Method | Route  | Description                     |
-| ------ | ------ | ------------------------------- |
-| GET    | `/`    | Get all books (with pagination) |
-| GET    | `/:id` | Get a specific book             |
-| POST   | `/`    | Add a new book (Admin only)     |
-| PUT    | `/:id` | Update a book (Admin only)      |
-| DELETE | `/:id` | Delete a book (Admin only)      |
+| Method | Route         | Description                     |
+| ------ | ------------- | ------------------------------- |
+| GET    | `/`           | Get all books (with pagination) |
+| GET    | `/searchText` | Get book by title or author     |
+| GET    | `/:id`        | Get a specific book             |
+| POST   | `/`           | Add a new book (Admin only)     |
+| PUT    | `/:id`        | Update a book (Admin only)      |
+| DELETE | `/:id`        | Delete a book (Admin only)      |
 
 ### Borrowing Routes (`/api/borrow`)
 
@@ -163,6 +165,7 @@ To test the API, import the provided Postman collection into Postman.
 #### 📌 Books
 
 - **Get all books** → `GET /api/book`
+- **Search books** → `GET /api/book/search?query=yourSearchTerm`
 - **Add a book (Admin)** → `POST /api/book` (Requires Bearer Token with admin role)
 - **Update a book (Admin)** → `PUT /api/book/:id`
 - **Delete a book (Admin)** → `DELETE /api/book/:id`
