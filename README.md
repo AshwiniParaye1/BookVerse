@@ -187,4 +187,20 @@ The API follows standard error-handling practices with appropriate status codes:
 - **404 Not Found** → Resource not found.
 - **500 Internal Server Error** → Unexpected server error.
 
-#### Thank you for checking out BookVerse! If you have any questions or feedback, feel free to reach out.
+## Deployment
+
+The API is deployed and accessible at:
+
+Live URL: [BookVerse on Render](https://bookverse-h04e.onrender.com/)
+
+### Using the Deployment link
+
+You can test all the api's by replacing `http://localhost:3000` with deployed link `https://bookverse-h04e.onrender.com/` as the base URL.
+
+#### Example:
+
+```bash
+GET https://bookverse-h04e.onrender.com/api/books
+```
+
+### Thank you for checking out BookVerse! If you have any questions or feedback, feel free to reach out.
