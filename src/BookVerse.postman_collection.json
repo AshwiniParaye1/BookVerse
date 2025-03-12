@@ -104,7 +104,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"title\": \"Sample Book\",\n    \"author\": \"John Doe\",\n    \"description\": \"A sample book description\",\n    \"isbn\": \"1234567890\",\n    \"quantity\": 5\n}"
+              "raw": "{\n    \"title\": \"Sample Book\",\n    \"author\": \"John Doe\",\n    \"description\": \"A sample book description\",\n    \"isbn\": \"1234567890\",\n    \"quantity\": 5,\n    \"publishedYear\": 2025,\n    \"genre\": \"sampleGenre\"\n}"
             },
             "url": {
               "raw": "{{base_url}}/api/books",
