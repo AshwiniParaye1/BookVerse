@@ -133,6 +133,26 @@
           }
         },
         {
+          "name": "Search Book",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/books/search?query={{search_term}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "books", "search"],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "{{search_term}}",
+                  "description": "Text to search in title or author"
+                }
+              ]
+            },
+            "description": "Search for books by title or author"
+          }
+        },
+        {
           "name": "Get Book by ID",
           "request": {
             "method": "GET",
